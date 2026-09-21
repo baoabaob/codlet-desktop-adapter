@@ -1,11 +1,103 @@
 {
-    "pluginId":  "codex.desktop.adapter",
-    "files":  [
-
-              ],
-    "repository":  "baoabaob/codlet-desktop-adapter",
-    "schema":  1,
-    "initializing":  true,
-    "kind":  "codlet-generated-distribution",
-    "sourceRepository":  "baoabaob/codlet-plugins"
+  "schema": 1,
+  "kind": "codlet-generated-distribution",
+  "pluginId": "codex.desktop.adapter",
+  "repository": "baoabaob/codlet-desktop-adapter",
+  "sourceRepository": "baoabaob/codlet-plugins",
+  "sourceCommit": "7c7ae8e528fe8c9a0ae719803500b1bba01d662d",
+  "version": "0.1.0",
+  "packageSha256": "4cbfc340a070008045ef0711e42db01439e16fd0c7785d33a9ea061ab6706af9",
+  "contentDigest": "2b0e44d3ce4df0a3178bea0ee9b0fef37a67f980e0401fb7acb4540c2055720e",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "gitBlob": "fa1385d99a319b43c06f5309d1aae9fdd3adea46"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 23,
+      "sha256": "c0d454996072b396e4b8a57d3bca418e814c225a2f8ffe80d858fdbc6ed1752c",
+      "gitBlob": "6bde8b99982755f2ca439974ca691440aac12b4e"
+    },
+    {
+      "path": "codlet-package.json",
+      "bytes": 374,
+      "sha256": "4abf82694ad5f6f8bbdf9ca7aa522d1c2f6d21b32a611b6c991680f718abcf51",
+      "gitBlob": "e1cb611e15ef69e91183594d065d714663506ec7"
+    },
+    {
+      "path": "codlet.json",
+      "bytes": 1004,
+      "sha256": "801e3e36fb75b0b947c915f6af01922564989fda456e2427d2fa1fe36ad53d4b",
+      "gitBlob": "52b7f53da667ecf1f5706996ebd4e8e30e63d2c5"
+    },
+    {
+      "path": "compatibility/client-profiles.js",
+      "bytes": 440,
+      "sha256": "b73ce6bb95c914ae3707e8b553799155349a903d069be132cb9a9238479da85e",
+      "gitBlob": "c19f9056b911b8a2bb21112b86f220375331dd31"
+    },
+    {
+      "path": "compatibility/client-profiles.json",
+      "bytes": 4123,
+      "sha256": "1bf456699683c6c36434b34d6b651de9d145dcf7dddca1cbeeee28764d1b39f1",
+      "gitBlob": "971413618b6b774154bfd4e12a9ce6fe20c036c8"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 326,
+      "sha256": "773296341715f9d61a5469078d1c21164087d52bda84e0eaef429be171c5d0a2",
+      "gitBlob": "6138cc8f790cec330bf1cf7aa10952d38d3bbf29"
+    },
+    {
+      "path": "frontend/build-plugin.mjs",
+      "bytes": 1731,
+      "sha256": "160fd4e3c77de7a7ce79650709830a9795104cda251d7aa7596b2acc28253a4e",
+      "gitBlob": "19631cae1b62d586641c74f65a1b0e1ab7b95953"
+    },
+    {
+      "path": "frontend/build.mjs",
+      "bytes": 630,
+      "sha256": "2fff37c4cdbc54ceb1188f87c6dcebb4be784d5fa78c8e9095df476addfa1cdd",
+      "gitBlob": "ff247283361afb2116a840f3a5eee64b581d6271"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "bytes": 215787,
+      "sha256": "f9cc5a54b4fe3a5a629435ccbcf5ddccc96a178d4ee1fa20ce49d3bf3db97bd2",
+      "gitBlob": "ffd0e6d3b39fabad9acdff37a79f1465fbacbb0a"
+    },
+    {
+      "path": "frontend/package.json",
+      "bytes": 457,
+      "sha256": "b0637a7bb8f602b63d526920c1e392c1bc1dff936aa38b53d81feda0041c0f28",
+      "gitBlob": "c55b5bdeecfcb2b06e2d9b21721ff436ffcdc248"
+    },
+    {
+      "path": "frontend/src/desktop/entry.js",
+      "bytes": 65329,
+      "sha256": "e71e5798548052dc74b52e010bb45593196d36448add70e24f683f9416d6eeba",
+      "gitBlob": "e8cac6d8cb0720dd3a855fed4e51aff60a49242c"
+    },
+    {
+      "path": "frontend/src/desktop/transport.js",
+      "bytes": 11347,
+      "sha256": "7dde284495eb91142ca5bc3449a21d7df9beb0c995ade08a872da16e93eb79fb",
+      "gitBlob": "b8b0f78eb413f25b3763c3d9d29da8e955a77830"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1495,
+      "sha256": "92f985231c40afe9ccadb7ab44fc3506966d2b55d473a3b69df2646084ed6471",
+      "gitBlob": "70783c2e59a00951141529a6bd3cf716da7f1d3b"
+    },
+    {
+      "path": "renderer.js",
+      "bytes": 78702,
+      "sha256": "63bf78106caa3c19d312cec02c71a84fa79dd5126024e9d8dc33b826359b1adc",
+      "gitBlob": "c9b20d18abe4fa385d4e2511c61eef403c14cc90"
+    }
+  ]
 }

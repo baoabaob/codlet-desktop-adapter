@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "runtimeApi": 1,
+  "platforms": [
+    "windows-x86_64",
+    "windows-aarch64",
+    "macos-aarch64"
+  ],
+  "author": "Codlet",
+  "adapters": {
+    "codex": {
+      "testedBuilds": [
+        "26.915.31945/9922"
+      ],
+      "limitations": [
+        "Windows x64 local Preview; Windows ARM64 and macOS native client acceptance pending"
+      ]
+    }
+  }
+}
