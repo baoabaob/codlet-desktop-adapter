@@ -1,0 +1,11 @@
+{
+    "pluginId":  "codex.desktop.adapter",
+    "files":  [
+
+              ],
+    "repository":  "baoabaob/codlet-desktop-adapter",
+    "schema":  1,
+    "initializing":  true,
+    "kind":  "codlet-generated-distribution",
+    "sourceRepository":  "baoabaob/codlet-plugins"
+}
