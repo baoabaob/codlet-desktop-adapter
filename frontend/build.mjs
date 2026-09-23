@@ -9,3 +9,5 @@ const result=await buildPlugin(base,"src/desktop/entry.js");
 const destination=resolve(root,manifest.renderer.entry);
 await mkdir(dirname(destination),{recursive:true});
 await writeFile(destination,result.code);
+const {buildDesktopHost}=await import('./build-host.mjs');
+await writeFile(resolve(root,manifest.host.entry),(await buildDesktopHost(base)).code);

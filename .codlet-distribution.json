@@ -4,10 +4,10 @@
   "pluginId": "codex.desktop.adapter",
   "repository": "baoabaob/codlet-desktop-adapter",
   "sourceRepository": "baoabaob/codlet-plugins",
-  "sourceCommit": "7c7ae8e528fe8c9a0ae719803500b1bba01d662d",
-  "version": "0.1.0",
-  "packageSha256": "4cbfc340a070008045ef0711e42db01439e16fd0c7785d33a9ea061ab6706af9",
-  "contentDigest": "2b0e44d3ce4df0a3178bea0ee9b0fef37a67f980e0401fb7acb4540c2055720e",
+  "sourceCommit": "330c717d5e6d54f90eb539cdcadf2e2c3afb43bd",
+  "version": "0.2.0",
+  "packageSha256": "29aba676811a6a3a9a1fb432c8b85bcef226e67c823a586a4268057ce3193963",
+  "contentDigest": "1b20846d32da18e00112e7ab093ee03d63d34aaf1ec9428d49928f00913ae527",
   "files": [
     {
       "path": ".gitattributes",
@@ -23,15 +23,15 @@
     },
     {
       "path": "codlet-package.json",
-      "bytes": 374,
-      "sha256": "4abf82694ad5f6f8bbdf9ca7aa522d1c2f6d21b32a611b6c991680f718abcf51",
-      "gitBlob": "e1cb611e15ef69e91183594d065d714663506ec7"
+      "bytes": 1497,
+      "sha256": "6fe09475e9cea5fafc42a43a2935b5d173b68226bff0662711f8ce7796943ae8",
+      "gitBlob": "e2af7d25c4cff4d8c796021bdd59912f4e656d9e"
     },
     {
       "path": "codlet.json",
-      "bytes": 1004,
-      "sha256": "801e3e36fb75b0b947c915f6af01922564989fda456e2427d2fa1fe36ad53d4b",
-      "gitBlob": "52b7f53da667ecf1f5706996ebd4e8e30e63d2c5"
+      "bytes": 1075,
+      "sha256": "900a5fbc19cba44597c6126b33fff471848bd49950a22706e702421eb72745d9",
+      "gitBlob": "ac95081083e9009e92628e989751f677e9d56ef1"
     },
     {
       "path": "compatibility/client-profiles.js",
@@ -41,15 +41,21 @@
     },
     {
       "path": "compatibility/client-profiles.json",
-      "bytes": 4123,
-      "sha256": "1bf456699683c6c36434b34d6b651de9d145dcf7dddca1cbeeee28764d1b39f1",
-      "gitBlob": "971413618b6b774154bfd4e12a9ce6fe20c036c8"
+      "bytes": 7141,
+      "sha256": "b86305e844b2849a56a464c283d7862f31aba33cf28f84074acdbce45c3f56e6",
+      "gitBlob": "437a423799ec595ae87353b33e5b9a75158dfbb9"
     },
     {
       "path": "CONTRIBUTING.md",
-      "bytes": 326,
-      "sha256": "773296341715f9d61a5469078d1c21164087d52bda84e0eaef429be171c5d0a2",
-      "gitBlob": "6138cc8f790cec330bf1cf7aa10952d38d3bbf29"
+      "bytes": 475,
+      "sha256": "c30a07f7f5018818310d353c654863737e95cd4564543cdf9d9815ccd2c25e78",
+      "gitBlob": "fcba8d0240ab86c1d6424e690b67b3016068d535"
+    },
+    {
+      "path": "frontend/build-host.mjs",
+      "bytes": 1184,
+      "sha256": "d80d15620dd18ce632df2e26b16676f4e1a46d5c9450224d268d7b21663f127f",
+      "gitBlob": "e2a04ee96856d29bc76eae780a3c2af85df67b49"
     },
     {
       "path": "frontend/build-plugin.mjs",
@@ -59,45 +65,117 @@
     },
     {
       "path": "frontend/build.mjs",
-      "bytes": 630,
-      "sha256": "2fff37c4cdbc54ceb1188f87c6dcebb4be784d5fa78c8e9095df476addfa1cdd",
-      "gitBlob": "ff247283361afb2116a840f3a5eee64b581d6271"
+      "bytes": 777,
+      "sha256": "6abe512512aa2e5e1964b21066414131a52d0c680a1bc5be4251d77ea8e48383",
+      "gitBlob": "1ee81bc488513d1d74fa19b80a6976c4563c5c65"
     },
     {
       "path": "frontend/package-lock.json",
-      "bytes": 215787,
-      "sha256": "f9cc5a54b4fe3a5a629435ccbcf5ddccc96a178d4ee1fa20ce49d3bf3db97bd2",
-      "gitBlob": "ffd0e6d3b39fabad9acdff37a79f1465fbacbb0a"
+      "bytes": 35067,
+      "sha256": "3a953c70fb07989924dcbb94527494a3d73a50be419c80b64f1878c409eb0ea6",
+      "gitBlob": "26ec5866a825abf5b1ef6bf50ce2cfa58a3195c2"
     },
     {
       "path": "frontend/package.json",
-      "bytes": 457,
-      "sha256": "b0637a7bb8f602b63d526920c1e392c1bc1dff936aa38b53d81feda0041c0f28",
-      "gitBlob": "c55b5bdeecfcb2b06e2d9b21721ff436ffcdc248"
+      "bytes": 293,
+      "sha256": "cbf438cf783d28b1c49a613a5baabce72c086f926bff3abf301e53b8ad0af8e0",
+      "gitBlob": "9902d411b9579ce94a75262f04e400094ea8cb05"
     },
     {
       "path": "frontend/src/desktop/entry.js",
-      "bytes": 65329,
-      "sha256": "e71e5798548052dc74b52e010bb45593196d36448add70e24f683f9416d6eeba",
-      "gitBlob": "e8cac6d8cb0720dd3a855fed4e51aff60a49242c"
+      "bytes": 65800,
+      "sha256": "73694e77a57bafd0ccd0d26cb6f2e2b302338ca298988fead2ea8577f10150e7",
+      "gitBlob": "af69353684c642ac27dbcc62e2210c01068674d7"
     },
     {
-      "path": "frontend/src/desktop/transport.js",
-      "bytes": 11347,
-      "sha256": "7dde284495eb91142ca5bc3449a21d7df9beb0c995ade08a872da16e93eb79fb",
-      "gitBlob": "b8b0f78eb413f25b3763c3d9d29da8e955a77830"
+      "path": "frontend/src/desktop/thread-configuration.js",
+      "bytes": 13888,
+      "sha256": "82766857f18b832ddeb492b634f6b64d4f180f6eade0707048d7c082316073bc",
+      "gitBlob": "75306210964111bae398778f10d9536219bf205f"
+    },
+    {
+      "path": "host.cjs",
+      "bytes": 118175,
+      "sha256": "5b75f404d26178d4898d1a810009a7bbed5d622f463ffbba03db399f3c46f811",
+      "gitBlob": "c1020fe0c58b24e7524c12910c6fdbe12e6dcf68"
+    },
+    {
+      "path": "host/backend-config-probe.cjs",
+      "bytes": 4716,
+      "sha256": "be9a49a671f2f5ff373d349a1feebdde6194a2397f0055b327d3cb9bfd9c1695",
+      "gitBlob": "a79e5fc02767ee87d668785fb980bcd57e65be1e"
+    },
+    {
+      "path": "host/backend-launch.cjs",
+      "bytes": 2858,
+      "sha256": "450337b15c31d4d3822da9f9a9c3eb53965b50c9d4991cb787ac31bf176671d3",
+      "gitBlob": "31260dfdf678332f78422f97bb907d04ded0d0ee"
+    },
+    {
+      "path": "host/backend-spawn.cjs",
+      "bytes": 10771,
+      "sha256": "22344ff757d1699c1595ed31deb69b7324852fad2d71e93a27adaf6a0ffab887",
+      "gitBlob": "b42dc01a43032347ddbd6c910bbede8d86032231"
+    },
+    {
+      "path": "host/codex-traffic.cjs",
+      "bytes": 9327,
+      "sha256": "99464ac31678f51830efb72f5bacb9b9085b3a2ab0c784df84ef20f47c481879",
+      "gitBlob": "c1c8ae8cdafe74a12b14d9e08536aa4407b8439e"
+    },
+    {
+      "path": "host/desktop-launch.cjs",
+      "bytes": 1398,
+      "sha256": "4aa42b7d9dbb44862b55b381d10322c6cf9dd57067d7b46495b45e91cb80fa36",
+      "gitBlob": "2c7bca0e05055c2fc7275034ad42353daf7d563b"
+    },
+    {
+      "path": "host/electron-bootstrap.cjs",
+      "bytes": 10035,
+      "sha256": "0fc98b9d5281aa39fa5102c2f929df42c192a5465bbe800c7a6413c3d31fffeb",
+      "gitBlob": "c998387f806fa812bd2b5d71f1a1a82cc0d12c04"
+    },
+    {
+      "path": "host/electron-main.cjs",
+      "bytes": 3085,
+      "sha256": "014e40700dfd20b0e7f09dfc951675984af3e6afdee9d28b6ce3debe1ce5603a",
+      "gitBlob": "c839f60b5e1259606fa6668d0ceef99685e2371b"
+    },
+    {
+      "path": "host/electron-plaintext.cjs",
+      "bytes": 21247,
+      "sha256": "b483825eb6e811ccf8552ccd71862465170967b87682bca35028c71297aa116b",
+      "gitBlob": "e5be149e1d294ddacbc194eac1b3f4fecf6791ac"
+    },
+    {
+      "path": "host/vendor/plaintext-source-client.cjs",
+      "bytes": 34293,
+      "sha256": "bdfd47aed5ae6aecf14aa003893c412a54b697935a969d60194811df11078580",
+      "gitBlob": "7f4f344a59d79e6543d78c40056cddb7c1e982a6"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "gitBlob": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 345,
+      "sha256": "b92e617f2f6e4387072abd7fd0269dc9c66f9f8d619f275d59824024ee83cb6c",
+      "gitBlob": "a39592a8cbea7ad04586653bdd48e2a0fe0c7450"
     },
     {
       "path": "README.md",
-      "bytes": 1495,
-      "sha256": "92f985231c40afe9ccadb7ab44fc3506966d2b55d473a3b69df2646084ed6471",
-      "gitBlob": "70783c2e59a00951141529a6bd3cf716da7f1d3b"
+      "bytes": 1862,
+      "sha256": "41859250fa281d337f6749f6edd9df2632984ee0c39b78c4a1d1c80a069d9b0e",
+      "gitBlob": "c1569f89a8aa437f782b2c5e12880b8128ae662b"
     },
     {
       "path": "renderer.js",
-      "bytes": 78702,
-      "sha256": "63bf78106caa3c19d312cec02c71a84fa79dd5126024e9d8dc33b826359b1adc",
-      "gitBlob": "c9b20d18abe4fa385d4e2511c61eef403c14cc90"
+      "bytes": 84687,
+      "sha256": "1e9cfb0e6fda550a8e723f9ead81a46ae2fd83e393dd1fd93819463d6cd0a68d",
+      "gitBlob": "11d2182ece571892fde66590bef7ba4939821844"
     }
   ]
 }
