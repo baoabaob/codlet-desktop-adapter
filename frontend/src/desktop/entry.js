@@ -1,5 +1,6 @@
-import { CLIENT_PROFILES } from '../../../compatibility/client-profiles.js';
+import { CLIENT_PROFILES, clientProfile } from '../../../compatibility/client-profiles.js';
 import { createThreadConfiguration } from './thread-configuration.js';
+import { createThreadReconfiguration } from './thread-reconfiguration.js';
 'use strict';
 
 // All Desktop build details stay in this optional directory package. The Core
@@ -57,11 +58,17 @@ function locateScope(token) {
     throw fail('desktop_scope_missing', 'Desktop AppScope is not mounted; reload the adapter after Desktop is ready');
 }
 
-function validateDesktopBuild(checkEntry = true) {
+function validateDesktopBuild(checkEntry = true, allowPending = false) {
     const detected = globalThis.electronBridge?.getSentryInitOptions?.();
-    const build = BUILDS.find(build => detected?.appVersion === build.appVersion && String(detected?.buildNumber) === build.buildNumber);
+    const entries = Array.from(document.scripts, script => script.src);
+    const build = clientProfile(detected, entries);
+    const candidates = BUILDS.filter(profile => profile.appVersion === detected?.appVersion && profile.buildNumber === String(detected?.buildNumber));
+    if (allowPending && location.origin === 'app://-' && location.pathname === '/index.html' &&
+        !build && candidates.length && !candidates.some(profile => entries.includes(profile.entry)) && document.readyState !== 'complete') {
+        throw fail('desktop_entry_pending', 'Waiting for the reviewed Desktop entry resource');
+    }
     if (location.origin !== 'app://-' || location.pathname !== '/index.html' ||
-        !build || (checkEntry && !Array.from(document.scripts).some(script => script.src === build.entry))) {
+        !build || (checkEntry && !entries.includes(build.entry))) {
         throw fail('desktop_build_drift', `Codex Desktop Adapter has no verified profile for ${optionalText(detected?.appVersion)} / ${optionalText(String(detected?.buildNumber))}`);
     }
     if (typeof globalThis.electronBridge?.sendMessageFromView !== 'function') throw fail('desktop_preload_missing', 'Desktop preload bridge is unavailable');
@@ -79,8 +86,16 @@ function probeTick(signal, delay) {
 }
 
 async function probeDesktop(loadModule = source => import(source), readyTimeoutMs = 3000, signal) {
-    const build = validateDesktopBuild(false);
     const readyDeadline = Date.now() + readyTimeoutMs;
+    let build;
+    for (;;) {
+        try { build = validateDesktopBuild(false, true); break; }
+        catch (error) {
+            if (error.code !== 'desktop_entry_pending') throw error;
+            if (Date.now() >= readyDeadline) throw fail('desktop_build_drift', 'The Desktop entry resource does not match this adapter');
+            await probeTick(signal, Math.min(50, readyDeadline - Date.now()));
+        }
+    }
     while (!Array.from(document.scripts).some(script => script.src === build.entry)) {
         if (document.readyState === 'complete' || Date.now() >= readyDeadline) throw fail('desktop_build_drift', 'The Desktop entry resource does not match this adapter');
         await probeTick(signal, Math.min(50, readyDeadline - Date.now()));
@@ -276,7 +291,7 @@ function createAdapter(connection, context, { compatibilityProvided = false } = 
         try { connection.check(); if (postbox.postMessage !== intercept) throw fail('desktop_patch_drift', 'Desktop request patch ownership changed; renderer reload required'); }
         catch (error) { markUnavailable(error); throw error; }
     };
-    const status = () => ({ api: 1, initializing: false, available: unavailable === null, unavailable: unavailable ? { ...unavailable } : null, build: publicBuild(build), connection: 'existing-desktop-local', transport: 'existing-app-host-services-and-native-request-client', inputRewrite: true, contextInjection: true, presentationTransform: false, historyMutation: false, hooks: hooks.size, pendingSubmits: pendingSubmits.size, navigation: { available: navigation !== null && navigationFailure === null, unavailable: navigationFailure }, threadConfiguration: { ...threadConfiguration.probe(), available: unavailable === null && threadConfiguration.probe().available } });
+    const status = () => ({ api: 1, initializing: false, available: unavailable === null, unavailable: unavailable ? { ...unavailable } : null, build: publicBuild(build), connection: 'existing-desktop-local', transport: 'existing-app-host-services-and-native-request-client', inputRewrite: true, contextInjection: true, presentationTransform: false, historyMutation: false, hooks: hooks.size, pendingSubmits: pendingSubmits.size, navigation: { available: navigation !== null && navigationFailure === null, unavailable: navigationFailure }, threadConfiguration: { ...threadConfiguration.probe(), reconfigureLoadedThread: threadReconfiguration.available(), available: unavailable === null && threadConfiguration.probe().available } });
     const emit = event => {
         if (!alive) return;
         const value = freeze({ ...copy(event), cursor: `${instance}:${++sequence}` });
@@ -327,6 +342,8 @@ function createAdapter(connection, context, { compatibilityProvided = false } = 
         return { pluginId: ctx.pluginId, generation: ctx.generation, capability };
     };
     const threadConfiguration = createThreadConfiguration({ check, owner, capability: CAPS.write, client, build });
+    const threadReconfiguration = createThreadReconfiguration({ manager, client, check, supported: build.threadReconfiguration,
+        selection: () => selection(), loadedThread, activeTurnState });
 
     function navigationUnavailable(error) {
         if (navigationFailure) return;
@@ -397,6 +414,9 @@ function createAdapter(connection, context, { compatibilityProvided = false } = 
     }
 
     function intercept(message, ...rest) {
+        if (alive && message?.type === 'mcp-request' && message.hostId === 'local' && ['turn/start', 'turn/steer'].includes(message.request?.method) && threadReconfiguration.busy(message.request.params?.threadId)) {
+            client.onError(message.request.id, fail('desktop_thread_busy', 'This task is applying a provider configuration')); return;
+        }
         if (alive && message?.type === 'mcp-request' && message.hostId === 'local' && ['thread/start', 'thread/resume'].includes(message.request?.method)) return threadConfiguration.intercept(message, next => originalPost.call(this, next, ...rest));
         if (alive && message?.type === 'mcp-request' && message.hostId === 'local' && message.request?.method === 'turn/start') return threadConfiguration.intercept(message, next => interceptSubmit.call(this, next, ...rest));
         return originalPost.call(this, message, ...rest);
@@ -487,6 +507,15 @@ function createAdapter(connection, context, { compatibilityProvided = false } = 
         const pagination = () => ({ limit: bounded(args.limit, 20, 100), ...(args.cursor == null ? {} : { cursor: str(args.cursor, 'cursor', 4096) }) });
         switch (method) {
             case 'selection.get': fields(args, []); return selection();
+            case 'threads.configuration': {
+                fields(args, ['threadId']);
+                const id = identity(args.threadId, 'threadId');
+                const current = manager.getConversation(id);
+                if (!current || current.resumeState !== 'resumed') throw fail('desktop_thread_not_loaded', 'Task configuration requires a loaded task');
+                const result = await nativeRequest('thread/read', { threadId: id, includeTurns: false }, signal);
+                if (manager.getConversation(id) !== current || current.resumeState !== 'resumed') throw fail('desktop_configuration_drift', 'Task changed while reading configuration');
+                return { threadId: id, modelProvider: optionalText(result.thread?.modelProvider, 128), model: optionalText(current.latestModel, 256) };
+            }
             case 'threads.list': {
                 fields(args, ['cursor', 'limit', 'archived']);
                 if (args.archived !== undefined && typeof args.archived !== 'boolean') throw fail('invalid_argument', 'archived must be boolean');
@@ -542,6 +571,7 @@ function createAdapter(connection, context, { compatibilityProvided = false } = 
         check(); obj(args);
         if (method === 'approvals.respond') return respondApproval(args, signal);
         if (method === 'threads.open') return openThread(args, signal);
+        if (method === 'threads.reconfigure') return threadReconfiguration.apply(args, signal);
         fields(args, method === 'turns.start' ? ['threadId', 'text', 'model', 'effort'] : method === 'turns.steer' ? ['threadId', 'turnId', 'text'] : ['threadId', 'turnId']);
         loadedThread(args.threadId);
         if (method === 'turns.start') {
@@ -753,8 +783,8 @@ function createAdapter(connection, context, { compatibilityProvided = false } = 
         context.rpc.provide(CAPS.submit, 'interceptors.list', args => listInterceptors(args));
         context.rpc.provide(CAPS.write, 'getApi', (_args, invocation) => issueTicket(CAPS.write, invocation));
         context.rpc.provide(CAPS.write, 'configurations.list', args => threadConfiguration.list(args ?? {}));
-        for (const method of ['selection.get', 'threads.list', 'threads.get', 'turns.list', 'items.list', 'models.list', 'skills.list', 'providers.list', 'approvals.list']) context.rpc.provide(CAPS.read, method, (args, invocation) => read(method, args ?? {}, invocation.signal));
-        for (const method of ['threads.open', 'turns.start', 'turns.steer', 'turns.interrupt', 'approvals.respond']) context.rpc.provide(CAPS.write, method, (args, invocation) => write(method, args ?? {}, invocation.signal));
+        for (const method of ['selection.get', 'threads.list', 'threads.get', 'threads.configuration', 'turns.list', 'items.list', 'models.list', 'skills.list', 'providers.list', 'approvals.list']) context.rpc.provide(CAPS.read, method, (args, invocation) => read(method, args ?? {}, invocation.signal));
+        for (const method of ['threads.open', 'threads.reconfigure', 'turns.start', 'turns.steer', 'turns.interrupt', 'approvals.respond']) context.rpc.provide(CAPS.write, method, (args, invocation) => write(method, args ?? {}, invocation.signal));
         context.rpc.provide(CAPS.events, 'read', (args, invocation) => readEvents(args ?? {}, invocation.signal));
         context.rpc.provide(CAPS.events, 'getApi', (_args, invocation) => issueTicket(CAPS.events, invocation));
         emit({ type: 'adapter.ready', connection: 'existing-desktop-local' });
