@@ -4,10 +4,10 @@
   "pluginId": "codex.desktop.adapter",
   "repository": "baoabaob/codlet-desktop-adapter",
   "sourceRepository": "baoabaob/codlet-plugins",
-  "sourceCommit": "1c6d5437293a6b29c79eb880d8ffd119ab0e297f",
-  "version": "0.2.4",
-  "packageSha256": "d89fa5aaa273f310e55952749b821cca0bb9c541a4d4381c2d12df9434670d36",
-  "contentDigest": "7c42739778e5118d3ff42d8e521fc34d35decd5f6a231918e3c2dee68e14d593",
+  "sourceCommit": "5cd6302e35b8f70f2e2b7cf830d203e73b3c68f3",
+  "version": "0.2.5",
+  "packageSha256": "1654609690107d531f52ea362e109d4566fc3bdc4fb6bffab00f1d6f254fe30c",
+  "contentDigest": "a592c0046c7b9fe8d6c1573b10b2ac1f3430857a44963f5dda7bcfa4928f192c",
   "files": [
     {
       "path": ".gitattributes",
@@ -30,8 +30,8 @@
     {
       "path": "codlet.json",
       "bytes": 1075,
-      "sha256": "ea2d8a2829e9b2e3d464d44a5c807daa2c626cd16f95f6148bbf121c537ca102",
-      "gitBlob": "f24148a75bb2a84827e34487bde427a422e3a58d"
+      "sha256": "4a21b7064d9994a90c36a207462680544592da18cb9ee1df92c5acbe9455a56f",
+      "gitBlob": "e690bf94e77bd1399279acf74ea75313e7aa57c9"
     },
     {
       "path": "compatibility/client-profiles.js",
@@ -41,9 +41,9 @@
     },
     {
       "path": "compatibility/client-profiles.json",
-      "bytes": 9535,
-      "sha256": "a3917e818d1e61d610342134008a914f9bcd0dd6376e10236642ddb2f2aae20e",
-      "gitBlob": "5ab4f002ff61cf91775f4811f582fa642819ff96"
+      "bytes": 9631,
+      "sha256": "68bcde02137dcedb2b20a47594a223288062b14312f1630834772e9f41b3cc32",
+      "gitBlob": "e088dd2bd499f486065fc03e03f5489046d86f9b"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -186,14 +186,14 @@
     {
       "path": "README.md",
       "bytes": 2022,
-      "sha256": "2e31490b18e625fcf2d892e2043cda16f6fab204729abecd49e9d160ae667416",
-      "gitBlob": "50a75c0c78e84c16df5c063166162d1797f1dbc9"
+      "sha256": "eb7186e3ea645a049aba5c65a9d8b293dcf56ba550040ef8e0b02b4fb5b66265",
+      "gitBlob": "f138337751cde9ed40a9e4bb27f9d9fc744079e3"
     },
     {
       "path": "renderer.js",
-      "bytes": 95296,
-      "sha256": "8f7c4f1a9b93c9706f7bd2563f554682321178740387f1d2fc3d731cc1dae75c",
-      "gitBlob": "3636c2e0eff560361f6adda4906cc3910c37b29d"
+      "bytes": 95384,
+      "sha256": "be9764ca51a9afb39d76568e0e37b6bd841d7a6d2d5161f5dd19386e7ed6fdb3",
+      "gitBlob": "c5833f8ce29f89b9014a088ac99a91a4f3fa665e"
     }
   ]
 }
