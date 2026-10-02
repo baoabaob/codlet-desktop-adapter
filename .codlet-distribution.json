@@ -4,10 +4,10 @@
   "pluginId": "codex.desktop.adapter",
   "repository": "baoabaob/codlet-desktop-adapter",
   "sourceRepository": "baoabaob/codlet-plugins",
-  "sourceCommit": "cab15cfb49c2cf42b12a743727f23a6c83b1291f",
-  "version": "0.2.7",
-  "packageSha256": "3801a4d0123d1d84c54cf75782639ec2494ee6e9415f2ee8deb1d77a87c6f970",
-  "contentDigest": "cf93ff97b22dad4dc19b15699efc608d1dc9cbe846b6f050f7711190bf19d621",
+  "sourceCommit": "6a999ab3c49c565e983ffff19d9ea333125e84cc",
+  "version": "0.2.8",
+  "packageSha256": "e9672fca69b54b944d18bdcbbbbfeab250b3ffa0556fe3c1b064be9578adb7fe",
+  "contentDigest": "23f77e84c470b48364c593c855765d9e7e2ce1953a334c2ba8ddf721c1416c48",
   "files": [
     {
       "path": ".gitattributes",
@@ -30,8 +30,8 @@
     {
       "path": "codlet.json",
       "bytes": 1075,
-      "sha256": "6d7b4a913452a34c034f79bf94dc9110dc50455059545c2fa1d45dedc7bc3ff3",
-      "gitBlob": "4e403d0a1df5700fa7023a7f5f3df57c463c6da8"
+      "sha256": "34083eae32fadc554d9d1be211a9949f21a2da381537650ae0c52b46cef119ab",
+      "gitBlob": "a695e91aa3c10d84e93ee20cb65c357dee408228"
     },
     {
       "path": "compatibility/client-profiles.js",
@@ -101,9 +101,9 @@
     },
     {
       "path": "frontend/src/host-discovery.js",
-      "bytes": 4519,
-      "sha256": "7a86755966ee72a0ca56645c052bc27aa3e56d1eb1f2f6c750cf93362bd72274",
-      "gitBlob": "39014a1e136833402a0da05b25baf7a18f45b8eb"
+      "bytes": 4705,
+      "sha256": "11db4bf82fe6cf3df9d302ecf17e268b371f20f32f70092ef12c821d5e7e4386",
+      "gitBlob": "6bd85bea957a8220547b45b3051ee94b2c248876"
     },
     {
       "path": "frontend/src/native-navigation.js",
@@ -192,14 +192,14 @@
     {
       "path": "README.md",
       "bytes": 2022,
-      "sha256": "8af98239ecae34bd684d7553708f7e98f8b8ea8c04fbd5714640eeb157971554",
-      "gitBlob": "bdef1f91d9a9cad5bef8e05fbb05c3d993dcccc3"
+      "sha256": "3cf2d2c49cbd451179512d034c398fd8691b8b17b9cedc08ba62d54fe3b0d97d",
+      "gitBlob": "c6af9ddaadc7f5d237f532f8bfd86308a99815b4"
     },
     {
       "path": "renderer.js",
-      "bytes": 102936,
-      "sha256": "ee2856b3113c6d7af503ac7a70b333f328f2a0d87719c51407f20cc256890b5b",
-      "gitBlob": "cecf8c8845a825b83726d43eead31fa40da9f202"
+      "bytes": 103123,
+      "sha256": "0c886b27fd2334eb1c545607cb1bde86993feb1220b91bc3984c1acb397d8df0",
+      "gitBlob": "36240707ce20b0672d85778fec98bc3f1a33aee1"
     }
   ]
 }
