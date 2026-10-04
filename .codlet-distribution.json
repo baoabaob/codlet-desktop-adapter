@@ -4,10 +4,10 @@
   "pluginId": "codex.desktop.adapter",
   "repository": "baoabaob/codlet-desktop-adapter",
   "sourceRepository": "baoabaob/codlet-plugins",
-  "sourceCommit": "625661ea26ce7a63a3e68f27acf7a6b9fa4e40b8",
-  "version": "0.2.10",
-  "packageSha256": "e14c46010a7efbb84eea8bfcce2c6d45bcdf2b83525a6b6b9a356cd34849958f",
-  "contentDigest": "f644d9ebd4bc9ab9facba47bf68854d227b889a110f3a226cdc0518bff562fba",
+  "sourceCommit": "4d0fcf5a8d42cbb67dec144199a97f83b0d68a91",
+  "version": "0.2.11",
+  "packageSha256": "d1f53d96395a65491ae0fc5e1a63b814bc6291d6850c98854f5888526b04f652",
+  "contentDigest": "a7ebc29998cde97ce83caa74c5b3355427a1a9463a5cccc9f4fe528a2dd8e955",
   "files": [
     {
       "path": ".gitattributes",
@@ -30,8 +30,8 @@
     {
       "path": "codlet.json",
       "bytes": 1077,
-      "sha256": "d15dfa9f0dff6ebec344f671666aa9279dedf2171a7df11a17727e44170bb5fa",
-      "gitBlob": "00539a5bda6657691da31620789c0fc37ef9c638"
+      "sha256": "66b65713fcb283c7d035abf012622b9d5305ae0c4334805681b19b61c4a8c62f",
+      "gitBlob": "375361002ca4f6e7f4e4eca8bd09113d6387013d"
     },
     {
       "path": "compatibility/client-profiles.js",
@@ -113,9 +113,9 @@
     },
     {
       "path": "host.cjs",
-      "bytes": 240734,
-      "sha256": "fa77ef3f7d451f227e7503796abbea7ee422b394ac1d221cee01849f97c3c56b",
-      "gitBlob": "5fcfcea577604cff2093aee7374eb74e984185ed"
+      "bytes": 241666,
+      "sha256": "8fbaee7cbd559163193d4dfd48645ecbbec4022891e4f8439a44c55224e87817",
+      "gitBlob": "9740e9179305c7c4b3c42a1897d15cfb0e6c4c25"
     },
     {
       "path": "host/backend-config-probe.cjs",
@@ -155,9 +155,9 @@
     },
     {
       "path": "host/electron-main.cjs",
-      "bytes": 5796,
-      "sha256": "9c9b4ae927dcd0e0a9d22d7bc5b6bb5061cb4b7573ad91db592d796661951b54",
-      "gitBlob": "f5be672f2030dd8de3c4aaa95d6cb58c03e4987d"
+      "bytes": 6475,
+      "sha256": "71cc2ec4b2a3d6c973a278661e4b5fda2dcba97d70e7b26aa34fc1fd6cc78113",
+      "gitBlob": "1383734a24a43f258ece16321065bb82ce0cd193"
     },
     {
       "path": "host/electron-plaintext.cjs",
@@ -192,8 +192,8 @@
     {
       "path": "README.md",
       "bytes": 2023,
-      "sha256": "650f6b429c928972e45a71c6a7839c4db393f9538511e6ae1479b1c97386e4e6",
-      "gitBlob": "eee47f025df4d892d562f458bbc12251278fe8be"
+      "sha256": "03645e33ebd40299b06e9b485fd1fb68cd9d9c7031222cca7a37bd51a2ce1fe7",
+      "gitBlob": "7ff27926d9328fa3e80a7cfc9269477b12f94551"
     },
     {
       "path": "renderer.js",
