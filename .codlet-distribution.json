@@ -4,10 +4,10 @@
   "pluginId": "codex.desktop.adapter",
   "repository": "baoabaob/codlet-desktop-adapter",
   "sourceRepository": "baoabaob/codlet-plugins",
-  "sourceCommit": "54bfd34639b3b62f3b8a08762abc92ff65ae5463",
-  "version": "0.2.12",
-  "packageSha256": "76c153e8cebe2167542c74259492780efae340c1745bb2aebae2ce3e0458f51f",
-  "contentDigest": "193f7067e6227c5171a8d9e48ef6bc1a329f2085edd955fb6b42c5d59889c401",
+  "sourceCommit": "60bb8e90ce645a71bc304d78e60ca19ac22029d3",
+  "version": "0.2.13",
+  "packageSha256": "192fa183635517e15f06573f26856612e5a0dff96deade5a6869adfe9cfb5fda",
+  "contentDigest": "507a8b2261a9e308cb158520c308408dff4e4fbd23f70083ecb900b950d13c49",
   "files": [
     {
       "path": ".gitattributes",
@@ -30,8 +30,8 @@
     {
       "path": "codlet.json",
       "bytes": 1077,
-      "sha256": "ef224ec0cf46df36d9ac35dd5da49450d4754933e35d9c013138b9e7f4854bc6",
-      "gitBlob": "d917778138099d0dbb76bfdaaec3f6ecb3154a10"
+      "sha256": "af6de60cfd034e2f87d7d5dacdd968e81091c0a4d05721b076c8890c767175cd",
+      "gitBlob": "9f57eede04ab539ced010d37c79b053352ea0190"
     },
     {
       "path": "compatibility/client-profiles.js",
@@ -113,9 +113,9 @@
     },
     {
       "path": "host.cjs",
-      "bytes": 242922,
-      "sha256": "3caa19965132b381d4672a213230b497e4fc70717349ad8c73a508d69003b87c",
-      "gitBlob": "5ceba62309d344be5f438670fb4b90cfa66472fa"
+      "bytes": 252368,
+      "sha256": "aea7bb242f58539a7ebcbcc9b4600fe0d883ac5a84e75e4881b91f54990e38db",
+      "gitBlob": "990e7df3529209ed895b0354d08d3033e3ff07da"
     },
     {
       "path": "host/backend-config-probe.cjs",
@@ -155,15 +155,21 @@
     },
     {
       "path": "host/electron-main.cjs",
-      "bytes": 7363,
-      "sha256": "367c4bd6a5295a8c979891e6dc0a5e7a380884bc9e686e954b09aa0704937aa7",
-      "gitBlob": "8c8b79e87edc5c8d46b56ce14366e3c5f63116f7"
+      "bytes": 8123,
+      "sha256": "e1e19e189dc2ccccbd633edb2a673d31a7fd1a7c5feb35667428d2ceb5c74501",
+      "gitBlob": "0e3d437b700176b88ace0eddc8ddaf43db0ebe27"
     },
     {
       "path": "host/electron-plaintext.cjs",
-      "bytes": 25811,
-      "sha256": "c58eaf18e5069ae3f9bf49c3cc46975a78f94f142228c9958b8a1371891f2048",
-      "gitBlob": "cadc452dc2d0dbd2456a95965ef8c006f21ce652"
+      "bytes": 26720,
+      "sha256": "3207256e2c87dee6bf8c1d5d6bffe4c36d3aab0ce190acde8596c92551df18d0",
+      "gitBlob": "0b5ca6a0a9619cb922d9106cd51131689c6473cd"
+    },
+    {
+      "path": "host/source-diagnostics.cjs",
+      "bytes": 2326,
+      "sha256": "fc322faf523c7bfeee4d95af29de6763297e4e47641edc42a216b32866624d4d",
+      "gitBlob": "032ba0e0aad9ea9d9ddaf9397287cfd63ca02fdd"
     },
     {
       "path": "host/vendor/plaintext-source-client.cjs",
@@ -192,8 +198,8 @@
     {
       "path": "README.md",
       "bytes": 2023,
-      "sha256": "8d83cfc82c9e54935ec72eb63834562cb50b9e30dcc84b7147ba585a91971ac2",
-      "gitBlob": "ee3e734b05a4c60102038e53ce7c7d2b8f4360ab"
+      "sha256": "25fec6b214eed8fa2afc1a60aa10d40fbdd281c02ff0e06f0eef78d6ad639245",
+      "gitBlob": "c214f72ab4440f69b810debe90a28ba262c6fc81"
     },
     {
       "path": "renderer.js",
