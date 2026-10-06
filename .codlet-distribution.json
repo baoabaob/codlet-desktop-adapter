@@ -4,10 +4,10 @@
   "pluginId": "codex.desktop.adapter",
   "repository": "baoabaob/codlet-desktop-adapter",
   "sourceRepository": "baoabaob/codlet-plugins",
-  "sourceCommit": "60bb8e90ce645a71bc304d78e60ca19ac22029d3",
-  "version": "0.2.13",
-  "packageSha256": "192fa183635517e15f06573f26856612e5a0dff96deade5a6869adfe9cfb5fda",
-  "contentDigest": "507a8b2261a9e308cb158520c308408dff4e4fbd23f70083ecb900b950d13c49",
+  "sourceCommit": "dae600b081e929169c89a071ba326088aed47bcf",
+  "version": "0.2.14",
+  "packageSha256": "1620c33f0ce97308632a69d7289280773291125ff0f72279d78504809074b6c6",
+  "contentDigest": "062156bbb8fa5bb89ccb176d6ce6232ae60cd0d0bc2d3adbfa8d803dcb7d1f85",
   "files": [
     {
       "path": ".gitattributes",
@@ -30,8 +30,8 @@
     {
       "path": "codlet.json",
       "bytes": 1077,
-      "sha256": "af6de60cfd034e2f87d7d5dacdd968e81091c0a4d05721b076c8890c767175cd",
-      "gitBlob": "9f57eede04ab539ced010d37c79b053352ea0190"
+      "sha256": "226ffe16ebf7dd7202ff7fc07a8d3b4c6c7bf20fe54e45f13abd0973cead0a60",
+      "gitBlob": "0d4c927a3652a9614ee67b571111875047b585e9"
     },
     {
       "path": "compatibility/client-profiles.js",
@@ -83,21 +83,27 @@
     },
     {
       "path": "frontend/src/desktop/entry.js",
-      "bytes": 73048,
-      "sha256": "501561811a23bb4eda786691c39521ad31b1f1c78095ac2de0f04458efb22a0b",
-      "gitBlob": "e083a370547333215477f8e8f67074885ef67eb7"
+      "bytes": 73512,
+      "sha256": "58a227dff25fd7309c905735e4b1796c0d51e5856045bf6e10a7dd51764d6b0a",
+      "gitBlob": "07f461d9c5aa57980772c7d1ced2c73faf4e6746"
     },
     {
       "path": "frontend/src/desktop/thread-configuration.js",
-      "bytes": 13888,
-      "sha256": "82766857f18b832ddeb492b634f6b64d4f180f6eade0707048d7c082316073bc",
-      "gitBlob": "75306210964111bae398778f10d9536219bf205f"
+      "bytes": 16766,
+      "sha256": "196d898889dea254a0292ffa9f7a022b55fb929ef2fb29e758abc97ba8a97701",
+      "gitBlob": "9acab42ac4c39292612c144532536ae1f7676596"
     },
     {
       "path": "frontend/src/desktop/thread-reconfiguration.js",
-      "bytes": 3267,
-      "sha256": "e4a181b802121acf9e66c793ae14fb771070c55a83fa2617eee812b35e86c9d4",
-      "gitBlob": "6346b04857e6af704a728b1f2d88bd2ab25cbdad"
+      "bytes": 3911,
+      "sha256": "47edd1c62a8dc6869fc4fdda63e11e58e1d2fa8de9e9234c4b7c22bf6affa3b1",
+      "gitBlob": "1881eb83100d63aa33e8d2ee48ce82fd5c680d47"
+    },
+    {
+      "path": "frontend/src/desktop/thread-restoration.js",
+      "bytes": 6806,
+      "sha256": "aeff0f0f78b175eb7231a2b1cab2e437196f425ef5bb0c11c31b66e3226bf276",
+      "gitBlob": "0e90d91ccaad08a4a5f83dc1ae9ba1c628916def"
     },
     {
       "path": "frontend/src/host-discovery.js",
@@ -113,9 +119,9 @@
     },
     {
       "path": "host.cjs",
-      "bytes": 252368,
-      "sha256": "aea7bb242f58539a7ebcbcc9b4600fe0d883ac5a84e75e4881b91f54990e38db",
-      "gitBlob": "990e7df3529209ed895b0354d08d3033e3ff07da"
+      "bytes": 255328,
+      "sha256": "37c094654e20e054a6c4235b0428b44eeb64ee094e956785ca29effd417852c8",
+      "gitBlob": "922f87d312fd9682c9c08107b4a6ebb4b9a42dcb"
     },
     {
       "path": "host/backend-config-probe.cjs",
@@ -137,9 +143,9 @@
     },
     {
       "path": "host/codex-traffic.cjs",
-      "bytes": 10125,
-      "sha256": "fc174a2b8039a7565827a0a8d6b626cd50cd0e85629b46811d21a4a285d94408",
-      "gitBlob": "d2893f91823d46e949e185e52cc5d09e298993d4"
+      "bytes": 10679,
+      "sha256": "709b69d18997217c9cc4be5a16863878add10872e36a1812195d8ad0e1194c2b",
+      "gitBlob": "64255a212eb17367d5ff8261c06d106e719f817d"
     },
     {
       "path": "host/desktop-launch.cjs",
@@ -161,9 +167,9 @@
     },
     {
       "path": "host/electron-plaintext.cjs",
-      "bytes": 26720,
-      "sha256": "3207256e2c87dee6bf8c1d5d6bffe4c36d3aab0ce190acde8596c92551df18d0",
-      "gitBlob": "0b5ca6a0a9619cb922d9106cd51131689c6473cd"
+      "bytes": 27322,
+      "sha256": "10d48c1b9a003fb7d1bad66592b60cfe1c60394e43f84766faba01d7e60d9853",
+      "gitBlob": "f51b0ef9364d671de43d782bd20b28a8342e6aca"
     },
     {
       "path": "host/source-diagnostics.cjs",
@@ -198,14 +204,14 @@
     {
       "path": "README.md",
       "bytes": 2023,
-      "sha256": "25fec6b214eed8fa2afc1a60aa10d40fbdd281c02ff0e06f0eef78d6ad639245",
-      "gitBlob": "c214f72ab4440f69b810debe90a28ba262c6fc81"
+      "sha256": "6c2106acb25eaf124302e64543c3f753dddb1449d3b9ce5ec30586a39d8d974e",
+      "gitBlob": "e0a9eda8358a9a8e16d263d3d136cd0a43960e12"
     },
     {
       "path": "renderer.js",
-      "bytes": 103123,
-      "sha256": "0c886b27fd2334eb1c545607cb1bde86993feb1220b91bc3984c1acb397d8df0",
-      "gitBlob": "36240707ce20b0672d85778fec98bc3f1a33aee1"
+      "bytes": 113926,
+      "sha256": "5ea4c5ef744eef9566099177d2e49cf5037f933667d26eb218a23445bca7e20e",
+      "gitBlob": "38da4d4dc87fd725202949e6dd019165635bfbab"
     }
   ]
 }
