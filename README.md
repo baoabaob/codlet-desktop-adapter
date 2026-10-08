@@ -2,7 +2,7 @@
 
 Official Codlet plugin for Codex desktop, task and transport integration
 
-Plugin ID: `codex.desktop.adapter` · Version: `0.2.15`
+Plugin ID: `codex.desktop.adapter` · Version: `0.2.16`
 
 ## Install and update
 
